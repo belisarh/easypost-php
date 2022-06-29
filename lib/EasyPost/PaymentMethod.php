@@ -6,8 +6,8 @@ namespace EasyPost;
  * @package EasyPost
  * @property string $id
  * @property string $object
- * @property CreditCard primary_payment_method
- * @property CreditCard secondary_payment_method
+ * @property Billing primary_payment_method
+ * @property Billing secondary_payment_method
  */
 class PaymentMethod extends EasypostResource
 {
