@@ -32,6 +32,38 @@ class PaymentMethodTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
+     * Test funding a EasyPost wallet by using either primary or secondary payment method.
+     *
+     * @return void
+     */
+    public function testFund()
+    {
+        $this->markTestSkipped('Skipping due to the lack of an available real payment method in tests.');
+
+        VCR::insertCassette('payment_method/fund.yml');
+
+        $payment_method_fund = PaymentMethod::fund(2000, 'primary');
+
+        $this->assertTrue($payment_method_fund != null);
+    }
+
+    /**
+     * Test deleting a payment method.
+     *
+     * @return void
+     */
+    public function testDelete()
+    {
+        $this->markTestSkipped('Skipping due to the lack of an available real payment method in tests.');
+
+        VCR::insertCassette('payment_method/delete.yml');
+
+        $delete_payment_method = PaymentMethod::delete('primary');
+
+        $this->assertTrue($delete_payment_method != null);
+    }
+
+    /**
      * Test retrieving all payment methods.
      *
      * @return void
