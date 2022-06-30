@@ -6,8 +6,8 @@ namespace EasyPost;
  * @package EasyPost
  * @property string $id
  * @property string $object
- * @property Billing primary_payment_method
- * @property Billing secondary_payment_method
+ * @property CreditCard primary_payment_method
+ * @property CreditCard secondary_payment_method
  */
 class PaymentMethod extends EasypostResource
 {
@@ -28,7 +28,7 @@ class PaymentMethod extends EasypostResource
         return $response;
     }
 
-        /**
+    /**
      * Fund your EasyPost wallet by charging your primary or secondary payment method.
      *
      * @param string $amount
