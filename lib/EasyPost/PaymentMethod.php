@@ -68,6 +68,12 @@ class PaymentMethod extends EasypostResource
         return Util::convertToEasyPostObject($response, $api_key);
     }
 
+    /**
+     * Get payment info (type of the payment method and ID of the payment method)
+     *
+     * @param string $primary_or_secondary
+     * @return array
+     */
     private static function get_payment_info($primary_or_secondary = 'primary')
     {
         $payment_methods = PaymentMethod::all();
